@@ -1,0 +1,10 @@
+.wrapper {
+  background: #ECEFF1;
+  height: 100%;
+  
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  grid-template-rows: repeat(3, 280px);
+  justify-content: center;
+  align-items: center;
+}
