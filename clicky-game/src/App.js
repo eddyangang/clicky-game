@@ -17,19 +17,28 @@ class App extends Component {
     this.setState({friends : friends})
   }
 
+
   check = (id) => {
+
+    if (this.state.score === 12) {
+      alert("Congratulations! You Won!!!")
+      this.reset()
+    }
     
     if (!this.state.clicked.includes(id)) {
       this.state.clicked.push(id)
       this.setState({score: this.state.score + 1})
       this.suffleFriends()
     } else {
-      // reset 
-      this.suffleFriends()
-      this.setState({score: 0});
-      this.setState({clicked: []});
+      this.reset();
       alert("You lose. Try Again")
     }
+  }
+
+  reset = () => {
+    this.suffleFriends()
+    this.setState({score: 0});
+    this.setState({clicked: []});
   }
 
   render() {
